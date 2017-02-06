@@ -1,4 +1,8 @@
 # Windows image file caches
+/bootstrap/compiled.php
+/vendor
+composer.phar
+
 Thumbs.db
 ehthumbs.db
 

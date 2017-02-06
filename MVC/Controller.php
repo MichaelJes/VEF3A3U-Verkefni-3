@@ -1,5 +1,5 @@
 <?php
-
+namespace Acme;
 /**
  * Created by PhpStorm.
  * User: micha
