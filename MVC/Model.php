@@ -9,6 +9,9 @@
 class Model
 {
     public $text;
+    public $bokarheiti;
+    public $utgafu;
+    public $utgafuar;
 
     public function __construct() {
         $this->text = 'Hello world!';

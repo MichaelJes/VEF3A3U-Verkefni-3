@@ -15,6 +15,8 @@ class View
     }
 
     public function output() {
-        return '<h1>' . $this->model->text .'</h1>';
+        // ef smellt þá reload síðu og textclicked value sett í $_GET, objets re-initialised
+        return '<select><option value="volvo">' . $this->model->text .'</option></select>';
     }
+
 }
