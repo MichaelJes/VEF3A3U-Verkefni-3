@@ -8,12 +8,15 @@
  */
 class Model
 {
-    public $text;
-    public $bokarheiti;
-    public $utgafu;
-    public $utgafuar;
-
+    public $bækur;
     public function __construct() {
-        $this->text = 'Hello world!';
+        $this->bækur[] = array("title" => "", "author" => "", "pages" => "");
+    }
+    public function getBooks() {
+        return $this->bækur;
+    }
+    public function searchbyName($bokarHeiti) {
+        $key = array_search($bokarHeiti, array_column($this->bækur, 'title'));
+        return $this->bækur[$key];
     }
 }

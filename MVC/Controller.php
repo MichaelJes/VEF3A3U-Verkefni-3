@@ -6,6 +6,8 @@ namespace Acme;
  * Date: 2/6/2017
  * Time: 1:43 PM
  */
+include_once 'Model.php';
+include_once 'view.php';
 class Controller
 {
     private $model;

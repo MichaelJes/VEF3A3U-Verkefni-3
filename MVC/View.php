@@ -8,15 +8,14 @@ namespace Acme;
  */
 class View
 {
-    private $model;
-
-    public function __construct(Model $model) {
-        $this->model = $model;
+    private $data=array();
+    public function assign($key,$value){
+        $this->data[$key]=$value;
     }
+    public function display($htmlPage){
+        extract($this->data);
+        include_once $htmlPage;
 
-    public function output() {
-        // ef smellt þá reload síðu og textclicked value sett í $_GET, objets re-initialised
-        return '<select><option value="volvo">' . $this->model->text .'</option></select>';
     }
 
 }
