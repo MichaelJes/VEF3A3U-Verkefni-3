@@ -8,14 +8,14 @@ namespace Acme;
  */
 class View
 {
-    private $data=array();
-    public function assign($key,$value){
-        $this->data[$key]=$value;
+    private $model;
+    public function __construct(Model $model) {
+        $this->model = $model;
     }
-    public function display($htmlPage){
-        extract($this->data);
-        include_once $htmlPage;
-
+    public function display(){
+        $model = new Model();
+        // getting all songs and amount of songs
+        return $model->getBooks();
     }
 
 }

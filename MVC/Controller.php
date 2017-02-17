@@ -16,10 +16,12 @@ class Controller
     public function __construct(Model $model) {
         $this->model = $model;
     }
+    public function index()
+    {
+        // Instance new Model (Song)
+        $model = new Model();
+        // getting all songs and amount of songs
+        return $model->getBooks();
 
-    // uppfærir model
-    // ath Class and method names are NOT case sensitive in PHP (textclicked). Variables are case sensitive
-    public function textClicked() {
-        $this->model->text = 'Text Updated';
     }
 }
