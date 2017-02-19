@@ -11,17 +11,12 @@ include_once 'view.php';
 class Controller
 {
     private $model;
-
-    // tekur inn model object
     public function __construct(Model $model) {
         $this->model = $model;
     }
-    public function index()
+    public function index($pick)
     {
-        // Instance new Model (Song)
-        $model = new Model();
-        // getting all songs and amount of songs
-        return $model->getBooks();
-
+        $view = new View();
+        $view->pick($pick);
     }
 }

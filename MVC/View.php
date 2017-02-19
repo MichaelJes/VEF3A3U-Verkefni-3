@@ -8,15 +8,26 @@ namespace Acme;
  */
 class View
 {
-    private $model;
-    public function __construct(Model $model) {
-        $this->model = $model;
-    }
     public function display(){
+        $option = '';
         $model = new Model();
         $data = $model->getBooks();
         // getting all songs and amount of songs
-        return print_r($data);
+        for ( $i = 0; $i < count($data); $i++)
+        {
+
+            $option .= '<option value="'. $i.'">'. $data[$i]['title']. '</option>';
+        }
+        echo '<form method="get" action=""><select name="Titlecombobox">' . $option . '</select> <input type="submit" /></form>';
+    }
+    public function pick($sign)
+    {
+        $model = new Model();
+        $data = $model->getBooks();
+        // getting all songs and amount of songs
+        echo 'Title'.' '.$data[$sign]['title']."<br>";
+        echo 'Author'.' '.$data[$sign]['author']."<br>";
+        echo 'Pages'.' '.$data[$sign]['pages']."<br>";
     }
 
 }
