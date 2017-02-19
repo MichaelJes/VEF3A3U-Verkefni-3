@@ -14,8 +14,9 @@ class View
     }
     public function display(){
         $model = new Model();
+        $data = $model->getBooks();
         // getting all songs and amount of songs
-        return $model->getBooks();
+        return print_r($data);
     }
 
 }
