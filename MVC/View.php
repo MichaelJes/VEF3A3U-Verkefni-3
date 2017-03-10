@@ -8,7 +8,11 @@ namespace Acme;
  */
 class View
 {
-    public function display(){
+
+    public function display()
+    {
+
+        /*
         $option = '';
         $model = new Model();
         $data = $model->getBooks();
@@ -16,8 +20,21 @@ class View
         {
             $option .= '<option value="'. $i.'">'. $data[$i]['title']. '</option>';
         }
+
         echo '<form method="get" action=""><select name="Titlecombobox">' . $option . '</select> <input type="submit" /></form>';
+        */
+        $jsonData = '[
+				{"title":"Music","url":"https://i.ytimg.com/vi/NDg2kSwVXU0/maxresdefault.jpg"},
+				{"title":"Winter","url":"http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_DSC_3274.jpg"},
+				{"title":"Piano","url":"https://i.ytimg.com/vi/5yRIt5yS36s/maxresdefault.jpg"},
+				]';
+        $json_array = json_decode($jsonData, true);
+        //array_push($json_array[], array('title' => 'Mountain', "url" => "http://kingofwallpapers.com/1920x1080/1920x1080-008.jpg"));
+        print_r($json_array);
+        $jsonData = json_encode($json_array);
+        //file_put_contents($jsonDatan, $jsonData);
     }
+    /*
     public function pick($sign)
     {
         $model = new Model();
@@ -27,5 +44,6 @@ class View
         echo 'Author'.' '.$data[$sign]['author']."<br>";
         echo 'Pages'.' '.$data[$sign]['pages']."<br>";
     }
+    */
 
 }

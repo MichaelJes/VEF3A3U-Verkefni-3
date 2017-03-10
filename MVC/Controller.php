@@ -10,6 +10,7 @@ include_once 'Model.php';
 include_once 'view.php';
 class Controller
 {
+    /*
     private $model;
     public function __construct(Model $model) {
         $this->model = $model;
@@ -19,4 +20,5 @@ class Controller
         $view = new View();
         $view->pick($pick);
     }
+    */
 }
