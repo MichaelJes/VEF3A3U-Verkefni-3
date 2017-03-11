@@ -28,9 +28,22 @@ class View
 				{"title":"Winter","url":"http://netdna.webdesignerdepot.com/uploads/2013/11/picjumbo.com_DSC_3274.jpg"},
 				{"title":"Piano","url":"https://i.ytimg.com/vi/5yRIt5yS36s/maxresdefault.jpg"},
 				]';
-        $json_array = json_decode($jsonData, true);
+        $jsonDataz = '[
+				{"title":"The Magic Flute","time":1329636600},
+				{"title":"Vivaldi Four Seasons","time":1329291000},
+			]';
+
+        echo "<pre>";
+
+        $json_array = json_decode($jsonData);
+        $jsonCOn = json_decode($jsonDataz);
         //array_push($json_array[], array('title' => 'Mountain', "url" => "http://kingofwallpapers.com/1920x1080/1920x1080-008.jpg"));
+
+        echo "<pre>";
         print_r($json_array);
+        print_r($jsonCOn);
+        echo 'hey';
+        echo "</pre>";
         $jsonData = json_encode($json_array);
         //file_put_contents($jsonDatan, $jsonData);
     }
